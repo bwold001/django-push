@@ -215,7 +215,7 @@ view to listen for notifications:
         def handle_subscription(self):
             payload = self.request.body
             parsed = feedparser.parse(payload)
-            for entry in payload.entries:
+            for entry in parsed.entries:
                 do_stuff_with(entry)
     callback = MyCallback.as_view()
 
